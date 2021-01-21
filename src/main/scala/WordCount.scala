@@ -7,7 +7,7 @@ object WordCount {
     conf.set("spark.master","local")
     conf.set("spark.app.name","spark demo")
     val sc = new SparkContext(conf)
-    var textIn = sc.textFile("hdfs://127.0.0.1:9000/2021/test.txt")
+    var textIn = sc.textFile("hdfs://192.168.1.83:8020/2021/test.txt")
     println(textIn.first())
     val textSplit = textIn.flatMap(line=>line.split(" "))
     val textSplitFlag = textSplit.map(word=>(word,1))
